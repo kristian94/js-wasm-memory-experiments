@@ -1,0 +1,30 @@
+{
+  "name": "node-ascript-mem-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "exp-01": "node --expose-gc --experimental-wasm-threads exp-01",
+    "exp-01b": "node --expose-gc --experimental-wasm-threads exp-01b",
+    "exp-02": "node --expose-gc --experimental-wasm-threads exp-02",
+    "build-01": "asc assembly/index.ts --target release",
+    "build-02": "asc assembly/index.ts --importMemory --target release",
+    "build-run-01": "npm run build-01 && npm run exp-01",
+    "build-run-02": "npm run build-02 && npm run exp-02"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.18.15",
+    "assemblyscript": "^0.18.15",
+    "pretty-bytes": "^5.6.0"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.18.15"
+  }
+}

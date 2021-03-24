@@ -1,0 +1,30 @@
+{
+  "targets": {
+    "debug": {
+      "binaryFile": "build/untouched.wasm",
+      "textFile": "build/untouched.wat",
+      "sourceMap": true,
+      "debug": true,
+
+      "sharedMemory": true,
+      "maximumMemory": 1000,
+      "initialMemory": 1,
+      "enable": ["threads"]
+    },
+    "release": {
+      "binaryFile": "build/optimized.wasm",
+      "textFile": "build/optimized.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 1,
+      "converge": false,
+      "noAssert": false,
+
+      "sharedMemory": true,
+      "maximumMemory": 1000, 
+      "initialMemory": 1,
+      "enable": ["threads"]
+    }
+  },
+  "options": {}
+}
